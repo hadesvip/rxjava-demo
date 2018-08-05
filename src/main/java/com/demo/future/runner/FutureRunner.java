@@ -8,18 +8,17 @@ import java.util.concurrent.FutureTask;
 
 /**
  * 多线程future测试
- * fu
+ * future以空间换时间
  * @author wangyong
  *
  */
 public class FutureRunner {
 
   public static void main(String[] args) throws InterruptedException, ExecutionException {
-
     FutureTask<String> searchFutureTask = new FutureTask<>(new FutureHandler("执行查询"));
     FutureTask<String> insertFutureTask = new FutureTask<>(new FutureHandler("执行插入"));
 
-    ExecutorService executorService = Executors.newFixedThreadPool(2);
+    ExecutorService executorService = Executors.newFixedThreadPool(1);
     executorService.submit(searchFutureTask);
     executorService.submit(insertFutureTask);
 

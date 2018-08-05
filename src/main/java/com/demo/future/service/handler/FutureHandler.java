@@ -2,6 +2,9 @@ package com.demo.future.service.handler;
 
 import java.util.concurrent.Callable;
 
+/**
+ * @author wangyong
+ */
 public class FutureHandler implements Callable<String> {
 
 
